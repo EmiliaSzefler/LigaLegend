@@ -1,4 +1,4 @@
-const correctPassword = "Liga1234";
+const correctPassword = "Akademia";
 const wpisaneHaslo = prompt("Wpisz swoje hasło:");
 
 if (wpisaneHaslo === correctPassword) {
@@ -8,3 +8,4 @@ if (wpisaneHaslo === correctPassword) {
 } else {
   alert("Dostęp wzbroniony!");
 }
+
