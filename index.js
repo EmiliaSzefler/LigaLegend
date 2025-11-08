@@ -1,11 +1,19 @@
 const correctPassword = "Akademia";
-const wpisaneHaslo = prompt("Wpisz swoje hasło:");
+const inputElement = document.getElementById("password-input");
+const buttonElement = document.getElementById("check-button");
+const messageElement = document.getElementById("message-display");
 
-if (wpisaneHaslo === correctPassword) {
-  alert("Dostęp przyznany!");
-} else if (wpisaneHaslo.length < 6) {
-  alert("Hasło musi mieć co najmniej 6 znaków.");
-} else {
-  alert("Dostęp wzbroniony!");
+function checkPassword() {
+  const wpisaneHaslo = inputElement.value;
+  if (wpisaneHaslo === correctPassword) {
+    messageElement.textContent = "Dostęp przyznany!";
+    messageElement.style.color = "green";
+  } else if (wpisaneHaslo.length < 6) {
+    messageElement.textContent = "Hasło musi mieć co najmniej 6 znaków.";
+    messageElement.style.color = "orange";
+  } else {
+    messageElement.textContent = "Dostęp wzbroniony!";
+    messageElement.style.color = "red";
+  }
 }
-
+buttonElement.addEventListener("click", checkPassword);
